@@ -1,0 +1,41 @@
+.main
+	background-image: url('../img/main_bg.jpg')
+	background-size: cover
+	text-transform: uppercase
+	&__video
+		position: absolute
+		width: 100%
+		z-index: -1
+		opacity: 0
+		transition: all .3s
+		&.shown
+			opacity: 1
+			z-index: 4
+		video
+			width: 100%
+	.play_btn
+		font-size: .52vw
+		width: 17.3em
+		height: 17.3em
+		border-radius: 50%
+		background-color: #cb232b
+		box-shadow: 0 0 32px rgba(255,255,255,.46)
+		position: absolute
+		bottom: 25%
+		right: 0
+		left: 0
+		margin: auto
+		img
+			position: absolute
+			left: 1em
+			top: 0
+			bottom: 0
+			right: 0
+			margin: auto
+			width: 3em
+			height: 4.5em
+	&__title
+		font-size: 8em
+		padding-top: 2em
+	&__subtitle
+		font-size: 4.4em

@@ -1,0 +1,232 @@
+@font-face {
+  font-family: 'Futura';
+  src: url("../fonts/futura_bold_font.eot");
+  src: url("../fonts/futura_bold_font.eot?#iefix") format("embedded-opentype"), url("../fonts/futura_bold_font.woff2") format("woff2"), url("../fonts/futura_bold_font.woff") format("woff"), url("../fonts/futura_bold_font.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+*:after,
+*:before,
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.clearfix {
+  height: 1px;
+  clear: both;
+  display: table; }
+
+html {
+  font-size: 10px; }
+  @media (max-width: 1700px) {
+    html {
+      font-size: 8px; } }
+  @media (max-width: 1224px) {
+    html {
+      font-size: 8px; } }
+  @media (max-width: 1024px) {
+    html {
+      font-size: 8px; } }
+  @media (max-width: 766px) {
+    html {
+      font-size: 7.5px; } }
+  @media (max-width: 350px) {
+    html {
+      font-size: 7px; } }
+  @media (min-width: 1700px) {
+    html {
+      font-size: 10px; } }
+  html body {
+    min-width: 320px;
+    font: .52vw "Futura", sans-serif;
+    font-weight: bold;
+    position: relative;
+    margin: 0 auto;
+    color: #fff;
+    overflow: hidden; }
+    html body input, html body input:focus, html body select, html body select:focus, html body textarea {
+      outline: none; }
+    html body a {
+      color: inherit;
+      outline: none;
+      text-decoration: none; }
+    html body button {
+      border: 0;
+      outline: 0;
+      cursor: pointer; }
+    html body section {
+      position: relative;
+      overflow: hidden;
+      height: 100vh;
+      font-size: .52vw;
+      background-position: center center;
+      -webkit-background-size: cover;
+              background-size: cover; }
+      html body section .arrow {
+        position: absolute;
+        z-index: 5;
+        width: 42px;
+        height: 28px;
+        background-image: url("../img/arrow_down.png");
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        margin: auto; }
+      html body section .arrow_up {
+        background-image: url("../img/arrow_up.png"); }
+      html body section:before {
+        content: "";
+        position: absolute;
+        height: 7.5em;
+        width: 42em;
+        left: 0;
+        top: 4em;
+        background-image: url("../img/logo.png");
+        -webkit-background-size: 100% 100%;
+                background-size: 100% 100%; }
+      html body section:after {
+        content: "";
+        position: absolute;
+        height: 8.9em;
+        width: 18em;
+        right: 0;
+        bottom: 4em;
+        background-image: url("../img/logo_2.png");
+        -webkit-background-size: 100% 100%;
+                background-size: 100% 100%; }
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  padding: 0 8em 0 17em; }
+  .container:after {
+    display: table;
+    content: "";
+    clear: both; }
+
+.main {
+  background-image: url("../img/main_bg.jpg");
+  -webkit-background-size: cover;
+          background-size: cover;
+  text-transform: uppercase; }
+  .main__video {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s; }
+    .main__video.shown {
+      opacity: 1;
+      z-index: 4; }
+    .main__video video {
+      width: 100%; }
+  .main .play_btn {
+    font-size: .52vw;
+    width: 17.3em;
+    height: 17.3em;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    background-color: #cb232b;
+    -webkit-box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
+            box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
+    position: absolute;
+    bottom: 25%;
+    right: 0;
+    left: 0;
+    margin: auto; }
+    .main .play_btn img {
+      position: absolute;
+      left: 1em;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 3em;
+      height: 4.5em; }
+  .main__title {
+    font-size: 8em;
+    padding-top: 2em; }
+  .main__subtitle {
+    font-size: 4.4em; }
+
+#second {
+  background-image: url("../img/second_bg.jpg"); }
+
+.desc {
+  background-image: url("../img/third_bg.jpg");
+  padding-top: 60px; }
+  .desc__list {
+    font-size: .52vw;
+    width: 110em;
+    float: right; }
+    .desc__list.sublist {
+      margin-top: 12em;
+      width: 55em; }
+    .desc__list__item {
+      font-size: 1.8em;
+      margin-bottom: 2.5vh;
+      font-weight: bold;
+      position: relative; }
+      .desc__list__item:last-of-type {
+        margin-bottom: 0; }
+      .desc__list__item:before {
+        position: absolute;
+        content: '';
+        width: 8px;
+        height: 13px;
+        background-image: url("../img/arrow_right.png");
+        left: -2.5em;
+        top: .25em; }
+      .desc__list__item em {
+        font-size: 1.3em;
+        font-style: normal;
+        text-transform: uppercase; }
+      .desc__list__item span {
+        display: block;
+        font-size: .78em; }

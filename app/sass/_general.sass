@@ -1,0 +1,115 @@
+
+
+$blueText: #405069
+$blueBg: #1d2744
+$xs: "(min-width: 319px)"
+$_xs: "(max-width: 350px)"
+$sm: "(min-width: 767px)"
+$_sm: "(max-width: 766px)"
+$md: "(min-width: 1025px)"
+$_md: "(max-width: 1024px)"
+$lg: "(min-width: 1224px)"
+$_lg: "(max-width: 1224px)"
+$_xlg: "(max-width: 1700px)"
+$xlg: "(min-width: 1700px)"
+.clearfix
+	height: 1px
+	clear: both
+	display: table
+html
+	font-size: 10px
+	@media #{$_xlg}
+		font-size: 8px
+	@media #{$_lg}
+		font-size: 8px
+	@media #{$_md}
+		font-size: 8px
+	@media #{$_sm}
+		font-size: 7.5px
+	@media #{$_xs}
+		font-size: 7px
+	@media #{$xlg}
+		font-size: 10px
+	body
+		min-width: 320px
+		font: .52vw "Futura", sans-serif
+		font-weight: bold
+
+		position: relative
+		margin: 0 auto
+		color: #fff
+		overflow: hidden
+		input,input:focus,select,select:focus,textarea
+			outline: none
+		a
+			color: inherit
+			outline: none
+			text-decoration: none
+		button
+			border: 0
+			outline: 0
+			cursor: pointer
+		section
+			position: relative
+			overflow: hidden
+			height: 100vh
+			font-size: .52vw
+			background-position: center center
+			background-size: cover
+			.arrow
+				position: absolute
+				z-index: 5
+				width: 42px
+				height: 28px
+				background-image: url('../img/arrow_down.png')
+				position: absolute
+				bottom: 40px
+				left: 0
+				right: 0
+				margin: auto
+			.arrow_up
+				background-image: url('../img/arrow_up.png')
+			&:before
+				content: ""
+				position: absolute
+				height: 7.5em
+				width: 42em
+				left: 0
+				top: 4em
+				background-image: url('../img/logo.png')
+				background-size: 100% 100%
+			&:after
+				content: ""
+				position: absolute
+				height: 8.9em
+				width: 18em
+				right: 0
+				bottom: 4em
+				background-image: url('../img/logo_2.png')
+				background-size: 100% 100%
+$cols: 12
+$col: calc( 100% / #{$cols} )
+=col($num)
+	@media #{$xs}
+		width: calc( #{$col} * #{$num} )
+=offset($offset)
+		margin-left: calc( #{$col} * #{$offset}
+.container
+	margin: 0 auto
+	position: relative
+	width: 100%
+	padding: 0 8em 0 17em
+	&:after
+		display: table
+		content: ""
+		clear: both
+	// @media #{$xs}
+	// 	width: 100%
+	// 	padding: 0 15px
+	// @media #{$sm}
+	// 	width: 750px
+	// 	padding: 0
+	// @media #{$md}
+	// 	width: 960px
+	// @media #{$lg}
+	// 	width: 1200px

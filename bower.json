@@ -1,0 +1,22 @@
+{
+  "name": "gin",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "app/libs"
+  ],
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "wow": "wowjs#^1.1.2"
+  },
+  "authors": [
+    "Vitaliy <vetalsd2@gmail.com>"
+  ]
+}
