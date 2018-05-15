@@ -18,6 +18,90 @@ Function.prototype.bind = function bind(scope) {
 };
 
 }
+if (!Array.prototype.filter) {
+// Array.prototype.filter
+Array.prototype.filter = function filter(callback, scope) {
+	for (var array = this, arrayB = [], index = 0, length = array.length, element; index < length; ++index) {
+		element = array[index];
+
+		if (callback.call(scope || window, element, index, array)) {
+			arrayB.push(element);
+		}
+	}
+
+	return arrayB;
+};
+
+}
+if (!Array.prototype.indexOf) {
+// Array.prototype.indexOf
+Array.prototype.indexOf = function indexOf(searchElement) {
+	for (var array = this, index = 0, length = array.length; index < length; ++index) {
+		if (array[index] === searchElement) {
+			return index;
+		}
+	}
+
+	return -1;
+};
+
+}
+if (!Array.prototype.map) {
+// Array.prototype.map
+Array.prototype.map = function map(callback, scope) {
+	for (var array = this, arrayB = [], index = 0, length = array.length, element; index < length; ++index) {
+		element = array[index];
+
+		arrayB.push(callback.call(scope || window, array[index], index, array));
+	}
+
+	return arrayB;
+};
+
+}
+if (!String.prototype.trim) {
+// String.prototype.trim
+String.prototype.trim = function trim() {
+	return this.replace(/^\s+|\s+$/g, '');
+};
+
+}
+if (typeof Array !== "undefined" && !Array.isArray) {
+// Array.isArray
+Array.isArray = function isArray(array) {
+	return array && Object.prototype.toString.call(array) === '[object Array]';
+};
+
+}
+if (typeof Object !== "undefined" && !Object.getPrototypeOf) {
+// Object.getPrototypeOf
+Object.getPrototypeOf = function getPrototypeOf(object) {
+	return object && object.constructor && object.constructor.prototype || null;
+};
+
+}
+if (typeof Object !== "undefined" && !Object.defineProperty) {
+// Object.defineProperty
+Object.defineProperty = function (object, property, descriptor) {
+	if (descriptor.get) {
+		object.__defineGetter__(property, descriptor.get);
+	}
+
+	if (descriptor.set) {
+		object.__defineSetter__(property, descriptor.set);
+	}
+
+	return object;
+};
+
+}
+if (typeof Date !== "undefined" && !Date.now) {
+// Date.now
+Date.now = function now() {
+	return new Date().getTime();
+};
+
+}
 if (typeof window.JSON === "undefined") {
 /** @license MIT Asen Bozhilov JSON.parse (https://github.com/abozhilov/json) */
 (function () {
@@ -364,89 +448,5 @@ if (typeof window.JSON === "undefined") {
 		}
 	};
 })();
-
-}
-if (!Array.prototype.filter) {
-// Array.prototype.filter
-Array.prototype.filter = function filter(callback, scope) {
-	for (var array = this, arrayB = [], index = 0, length = array.length, element; index < length; ++index) {
-		element = array[index];
-
-		if (callback.call(scope || window, element, index, array)) {
-			arrayB.push(element);
-		}
-	}
-
-	return arrayB;
-};
-
-}
-if (!Array.prototype.indexOf) {
-// Array.prototype.indexOf
-Array.prototype.indexOf = function indexOf(searchElement) {
-	for (var array = this, index = 0, length = array.length; index < length; ++index) {
-		if (array[index] === searchElement) {
-			return index;
-		}
-	}
-
-	return -1;
-};
-
-}
-if (!Array.prototype.map) {
-// Array.prototype.map
-Array.prototype.map = function map(callback, scope) {
-	for (var array = this, arrayB = [], index = 0, length = array.length, element; index < length; ++index) {
-		element = array[index];
-
-		arrayB.push(callback.call(scope || window, array[index], index, array));
-	}
-
-	return arrayB;
-};
-
-}
-if (!String.prototype.trim) {
-// String.prototype.trim
-String.prototype.trim = function trim() {
-	return this.replace(/^\s+|\s+$/g, '');
-};
-
-}
-if (typeof Array !== "undefined" && !Array.isArray) {
-// Array.isArray
-Array.isArray = function isArray(array) {
-	return array && Object.prototype.toString.call(array) === '[object Array]';
-};
-
-}
-if (typeof Object !== "undefined" && !Object.getPrototypeOf) {
-// Object.getPrototypeOf
-Object.getPrototypeOf = function getPrototypeOf(object) {
-	return object && object.constructor && object.constructor.prototype || null;
-};
-
-}
-if (typeof Object !== "undefined" && !Object.defineProperty) {
-// Object.defineProperty
-Object.defineProperty = function (object, property, descriptor) {
-	if (descriptor.get) {
-		object.__defineGetter__(property, descriptor.get);
-	}
-
-	if (descriptor.set) {
-		object.__defineSetter__(property, descriptor.set);
-	}
-
-	return object;
-};
-
-}
-if (typeof Date !== "undefined" && !Date.now) {
-// Date.now
-Date.now = function now() {
-	return new Date().getTime();
-};
 
 }
