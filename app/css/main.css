@@ -264,6 +264,9 @@ html {
     font-size: .52vw;
     width: 110em;
     float: right; }
+    @media (max-width: 1500px) {
+      .desc__list {
+        font-size: .57vw; } }
     .desc__list.sublist {
       margin-top: 12em;
       width: 55em; }

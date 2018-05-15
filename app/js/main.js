@@ -41,41 +41,48 @@ $(document).ready(function () {
 	}
 	function scrollTo(y) {
 		var h = window.innerHeight * y;
-
 		window.scrollBy({
 			'behavior': 'smooth',
 			left: 0,
 			top: h
 		});
 	}
-	if (window.addEventListener) {
-		if ('onwheel' in document) {
-			window.onwheel = function (e) {
-				e.preventDefault();
+
+	var intervalMs = 700,
+	    last = 0;
+	if ('onwheel' in document) {
+		document.onwheel = function (e) {
+			var now = new Date().getTime();
+			e.preventDefault();
+			if (last + intervalMs < now) {
+				last = now;
 				var k;
 				if (e.deltaY > 0) {
 					k = 1;
 				} else {
 					k = -1;
 				}
-				// $('html,body').stop().scrollBy(k);
-				scrollTo(k, document.body, 2, 700);
+				scrollTo(k, document.body, 2, 500);
 				return false;
-			};
-		} else if ('onmousewheel' in document) {
-			window.onmousewheel = function (e) {
-				e.preventDefault();
+			}
+		};
+	}
+	if ('onmousewheel' in document) {
+		document.onmousewheel = function (e) {
+			var now = new Date().getTime();
+			e.preventDefault();
+			if (last + intervalMs < now) {
+				last = now;
 				var k;
 				if (e.deltaY > 0) {
 					k = 1;
 				} else {
 					k = -1;
 				}
-				// $('html,body').stop().scrollBy(k);
-				scrollTo(k, document.body, 2, 700);
+				scrollTo(k, document.body, 2, 500);
 				return false;
-			};
-		}
+			}
+		};
 	}
 	Math.easeInOutQuad = function (t, b, c, d) {
 		t /= d / 2;
