@@ -156,6 +156,8 @@ html {
   .main__video {
     position: absolute;
     width: 100%;
+    height: 100%;
+    background-color: #000;
     z-index: -1;
     opacity: 0;
     -webkit-transition: all .3s;
@@ -165,7 +167,11 @@ html {
       opacity: 1;
       z-index: 4; }
     .main__video video {
-      width: 100%; }
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
   .main .play_btn {
     font-size: .52vw;
     width: 17.3em;
