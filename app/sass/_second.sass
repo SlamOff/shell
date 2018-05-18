@@ -1,2 +1,35 @@
 #second
 	background-image: url('../img/second_bg.jpg')
+	.video_wrapper
+		position: relative
+		height: 100%
+		.controls
+			position: absolute
+			left: 20px
+			bottom: 20px
+			z-index: 222
+			cursor: pointer
+			background-color: #fff
+			width: 80px
+			height: 30px
+			line-height: 30px
+			color: #000
+			text-align: center
+			font-size: 20px
+			&.btn1
+				left: 20px
+			&.btn2
+				left: 150px
+		.video
+			width: 200px
+			position: absolute
+			left: 0
+			top: 0
+			width: 50%
+			height: 100%
+			display: none
+			&.active
+				display: block
+		.video:last-of-type
+			left: auto
+			right: 0

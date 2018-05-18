@@ -262,6 +262,39 @@ html {
 
 #second {
   background-image: url("../img/second_bg.jpg"); }
+  #second .video_wrapper {
+    position: relative;
+    height: 100%; }
+    #second .video_wrapper .controls {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      z-index: 222;
+      cursor: pointer;
+      background-color: #fff;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      color: #000;
+      text-align: center;
+      font-size: 20px; }
+      #second .video_wrapper .controls.btn1 {
+        left: 20px; }
+      #second .video_wrapper .controls.btn2 {
+        left: 150px; }
+    #second .video_wrapper .video {
+      width: 200px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      display: none; }
+      #second .video_wrapper .video.active {
+        display: block; }
+    #second .video_wrapper .video:last-of-type {
+      left: auto;
+      right: 0; }
 
 .desc {
   background-image: url("../img/third_bg.jpg");

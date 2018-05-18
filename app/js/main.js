@@ -6,6 +6,7 @@ $(document).ready(function () {
 
 	$('.play_btn').click(function () {
 		$('.main__video').addClass('shown');
+		$('.main__video video').get(0).volume = .1;
 		$('.main__video video').get(0).play();
 	});
 	$('.main__video video').click(function () {
@@ -112,4 +113,57 @@ $(document).ready(function () {
 		}
 		scrollTo(k);
 	}
+
+	var video = document.getElementsByClassName('video');
+	var btn1 = document.getElementsByClassName('btn1')[0];
+	var btn2 = document.getElementsByClassName('btn2')[0];
+	console.log(video);
+
+	function nextStep($this) {
+		$this.classList.remove('active');
+		var nextVideo = $this.nextElementSibling;
+		//console.log(nextVideo);
+		nextVideo.classList.add('active');
+		nextVideo.play();
+	}
+	function prevStep($this) {
+		$this.classList.remove('active');
+		var prevVideo = $this.previousElementSibling;
+		console.log(prevVideo);
+		prevVideo.classList.add('active');
+		prevVideo.play();
+	}
+
+	for (var n = 0; n < video.length; n++) {
+		var next = false;
+		if (video[n].classList.contains('active')) {
+			var countPlay = 0;
+			video[n].play();
+			video[n].addEventListener('ended', function () {
+				console.log('ended');
+				countPlay++;
+				console.log(countPlay);
+				this.play();
+				if (countPlay >= 3) {
+					this.pause();
+					next = true;
+				}
+				if (next) {
+					nextStep(this);
+				}
+			});
+			video[n].addEventListener('play', function () {
+				var that = this;
+				//console.log(that);
+				btn1.onclick = function () {
+					nextStep(that);
+				};
+				btn2.onclick = function () {
+					prevStep(that.nextElementSibling);
+				};
+			});
+		}
+	}
+
+	var loop = true;
 });
