@@ -231,34 +231,40 @@ html {
     -webkit-box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
             box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
     -webkit-transform: scale(1);
-            transform: scale(1); }
-  50% {
+            transform: scale(1);
+    background-color: #cb232b; }
+  20% {
     -webkit-box-shadow: 10px 10px 132px white;
             box-shadow: 10px 10px 132px white;
     -webkit-transform: scale(0.7);
-            transform: scale(0.7); }
-  100% {
+            transform: scale(0.7);
+    background-color: #000; }
+  40% {
     -webkit-box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
             box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
     -webkit-transform: scale(1);
-            transform: scale(1); } }
+            transform: scale(1);
+    background-color: #cb232b; } }
 
 @keyframes pulse {
   0% {
     -webkit-box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
             box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
     -webkit-transform: scale(1);
-            transform: scale(1); }
-  50% {
+            transform: scale(1);
+    background-color: #cb232b; }
+  20% {
     -webkit-box-shadow: 10px 10px 132px white;
             box-shadow: 10px 10px 132px white;
     -webkit-transform: scale(0.7);
-            transform: scale(0.7); }
-  100% {
+            transform: scale(0.7);
+    background-color: #000; }
+  40% {
     -webkit-box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
             box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
     -webkit-transform: scale(1);
-            transform: scale(1); } }
+            transform: scale(1);
+    background-color: #cb232b; } }
 
 #second {
   background-image: url("../img/second_bg.jpg"); }

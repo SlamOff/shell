@@ -1,5 +1,5 @@
-$(document).ready(function() {
-
+//$(document).ready(function() {
+window.onload = function(){
 	new WOW().init();
 
 	$('.play_btn').click(function(){
@@ -123,7 +123,10 @@ $(document).ready(function() {
 	var video = document.getElementsByClassName('video');
 	var btn1 = document.getElementsByClassName('btn1')[0];
 	var btn2 = document.getElementsByClassName('btn2')[0];
-	console.log(video);
+	
+	// for(var l = 0; l < video.length){
+	// 	video[l].onload
+	// }
 
 
 
@@ -141,38 +144,45 @@ $(document).ready(function() {
 		prevVideo.play();
 	}
 
+//video.addEventListener("progress", function() {
 
-	for(var n = 0; n < video.length; n++){
-		video[n].load();
-		var next = false;
-		if(video[n].classList.contains('active')){
-			var countPlay = 0;
-			video[n].play();
-			video[n].addEventListener('ended', function(){
-				console.log('ended');
-				countPlay++;
-				console.log(countPlay);
-				this.play();
-				if(countPlay >=3){
-					this.pause();
-					next = true;
+
+	for(var k = 0; k < video.length; k++){
+		video[k].onloadeddata = function(){
+			for(var n = 0; n < video.length; n++){
+				var next = false;
+				if(video[n].classList.contains('active')){
+					var countPlay = 0;
+					video[n].play();
+					video[n].addEventListener('ended', function(){
+						console.log('ended');
+						countPlay++;
+						console.log(countPlay);
+						this.play();
+						if(countPlay >=3){
+							this.pause();
+							next = true;
+						}
+						if(next){
+							nextStep(this);
+						}
+					});
+					video[n].addEventListener('play', function(){
+						var that = this;
+						//console.log(that);
+						btn1.onclick = function(){
+							nextStep(that);
+						};
+						btn2.onclick = function(){
+							prevStep(that.nextElementSibling);
+						}
+					});
 				}
-				if(next){
-					nextStep(this);
-				}
-			});
-			video[n].addEventListener('play', function(){
-				var that = this;
-				//console.log(that);
-				btn1.onclick = function(){
-					nextStep(that);
-				};
-				btn2.onclick = function(){
-					prevStep(that.nextElementSibling);
-				}
-			});
+			}
 		}
-		
 	}
+//}, false);
+
 	var loop = true;
-});
+//});
+}
