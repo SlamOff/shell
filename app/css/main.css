@@ -178,7 +178,7 @@ html {
     height: 17.3em;
     -webkit-border-radius: 50%;
             border-radius: 50%;
-    background-color: #cb232b;
+    background-color: #da3833;
     -webkit-box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
             box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
     position: absolute;
@@ -232,19 +232,19 @@ html {
             box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
     -webkit-transform: scale(1);
             transform: scale(1);
-    background-color: #cb232b; }
-  20% {
+    background-color: #da3833; }
+  15% {
     -webkit-box-shadow: 10px 10px 132px white;
             box-shadow: 10px 10px 132px white;
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
-    background-color: #000; }
-  40% {
+    background-color: #ff1912; }
+  30% {
     -webkit-box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
             box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
     -webkit-transform: scale(1);
             transform: scale(1);
-    background-color: #cb232b; } }
+    background-color: #da3833; } }
 
 @keyframes pulse {
   0% {
@@ -252,19 +252,19 @@ html {
             box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
     -webkit-transform: scale(1);
             transform: scale(1);
-    background-color: #cb232b; }
-  20% {
+    background-color: #da3833; }
+  15% {
     -webkit-box-shadow: 10px 10px 132px white;
             box-shadow: 10px 10px 132px white;
     -webkit-transform: scale(0.7);
             transform: scale(0.7);
-    background-color: #000; }
-  40% {
+    background-color: #ff1912; }
+  30% {
     -webkit-box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
             box-shadow: 0 0 32px rgba(255, 255, 255, 0.46);
     -webkit-transform: scale(1);
             transform: scale(1);
-    background-color: #cb232b; } }
+    background-color: #da3833; } }
 
 #second {
   background-image: url("../img/second_bg.jpg"); }
