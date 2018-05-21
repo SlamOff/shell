@@ -292,9 +292,6 @@ html {
       display: none; }
       #second .video_wrapper .video.active {
         display: block; }
-    #second .video_wrapper .video:last-of-type {
-      left: auto;
-      right: 0; }
 
 .desc {
   background-image: url("../img/third_bg.jpg");

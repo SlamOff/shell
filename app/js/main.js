@@ -122,7 +122,6 @@ $(document).ready(function () {
 	function nextStep($this) {
 		$this.classList.remove('active');
 		var nextVideo = $this.nextElementSibling;
-		//console.log(nextVideo);
 		nextVideo.classList.add('active');
 		nextVideo.play();
 	}
@@ -135,6 +134,7 @@ $(document).ready(function () {
 	}
 
 	for (var n = 0; n < video.length; n++) {
+		video[n].load();
 		var next = false;
 		if (video[n].classList.contains('active')) {
 			var countPlay = 0;
@@ -164,6 +164,5 @@ $(document).ready(function () {
 			});
 		}
 	}
-
 	var loop = true;
 });

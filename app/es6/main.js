@@ -125,10 +125,11 @@ $(document).ready(function() {
 	var btn2 = document.getElementsByClassName('btn2')[0];
 	console.log(video);
 
+
+
 	function nextStep($this){
 		$this.classList.remove('active');
 		var nextVideo = $this.nextElementSibling;
-		//console.log(nextVideo);
 		nextVideo.classList.add('active');
 		nextVideo.play();
 	}
@@ -142,6 +143,7 @@ $(document).ready(function() {
 
 
 	for(var n = 0; n < video.length; n++){
+		video[n].load();
 		var next = false;
 		if(video[n].classList.contains('active')){
 			var countPlay = 0;
@@ -156,7 +158,7 @@ $(document).ready(function() {
 					next = true;
 				}
 				if(next){
-					nextStep(this)
+					nextStep(this);
 				}
 			});
 			video[n].addEventListener('play', function(){
@@ -172,10 +174,5 @@ $(document).ready(function() {
 		}
 		
 	}
-
-
 	var loop = true;
-
-
-
 });
