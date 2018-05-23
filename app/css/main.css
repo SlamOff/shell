@@ -86,6 +86,12 @@ html {
     margin: 0 auto;
     color: #fff;
     overflow: hidden; }
+    @media (max-width: 1224px) {
+      html body {
+        font-size: .9vw; } }
+    @media (max-width: 766px) {
+      html body {
+        overflow: visible; } }
     html body input, html body input:focus, html body select, html body select:focus, html body textarea {
       outline: none; }
     html body a {
@@ -115,9 +121,20 @@ html {
         left: 0;
         right: 0;
         margin: auto; }
+        @media (max-width: 766px) {
+          html body section .arrow {
+            bottom: 30px;
+            width: 30px;
+            height: 20px;
+            background-image: url("../img/arrow_down_m.png"); } }
       html body section .arrow_up {
         background-image: url("../img/arrow_up.png"); }
+        @media (max-width: 766px) {
+          html body section .arrow_up {
+            background-image: url("../img/arrow_up_m.png"); } }
       html body section:before {
+        min-width: 210px;
+        min-height: 40px;
         content: "";
         position: absolute;
         height: 7.5em;
@@ -126,8 +143,14 @@ html {
         top: 4em;
         background-image: url("../img/logo.png");
         -webkit-background-size: 100% 100%;
-                background-size: 100% 100%; }
+                background-size: 100% 100%;
+        z-index: 1; }
+        @media (max-width: 766px) {
+          html body section:before {
+            top: 30px; } }
       html body section:after {
+        min-width: 100px;
+        min-height: 45px;
         content: "";
         position: absolute;
         height: 8.9em;
@@ -136,7 +159,11 @@ html {
         bottom: 4em;
         background-image: url("../img/logo_2.png");
         -webkit-background-size: 100% 100%;
-                background-size: 100% 100%; }
+                background-size: 100% 100%;
+        z-index: 1; }
+        @media (max-width: 766px) {
+          html body section:after {
+            bottom: 30px; } }
 
 .container {
   margin: 0 auto;
@@ -197,7 +224,9 @@ html {
             animation-iteration-count: infinite;
     -webkit-animation-direction: alternate-reverse;
             animation-direction: alternate-reverse;
-    z-index: 2; }
+    z-index: 2;
+    min-width: 100px;
+    min-height: 100px; }
     .main .play_btn .play_mask {
       position: absolute;
       width: 100%;
@@ -220,11 +249,27 @@ html {
       margin: auto;
       width: 3em;
       height: 4.5em; }
+      @media (max-width: 766px) {
+        .main .play_btn img {
+          min-width: 20px;
+          min-height: 30px;
+          left: 3em; } }
   .main__title {
     font-size: 8em;
     padding-top: 2em; }
+    @media (max-width: 1024px) {
+      .main__title {
+        padding-top: 3em;
+        font-size: 10em; } }
+    @media (max-width: 766px) {
+      .main__title {
+        padding-top: 130px;
+        font-size: 30px; } }
   .main__subtitle {
     font-size: 4.4em; }
+    @media (max-width: 766px) {
+      .main__subtitle {
+        font-size: 16px; } }
 
 @-webkit-keyframes pulse {
   0% {
@@ -301,7 +346,58 @@ html {
 
 .desc {
   background-image: url("../img/third_bg.jpg");
-  padding-top: 60px; }
+  padding-top: 4em; }
+  @media (max-width: 1224px) {
+    .desc {
+      padding-top: 60px; } }
+  .desc .links {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    font-size: 12px;
+    color: #f5d130;
+    font-weight: bold;
+    z-index: 5; }
+    @media (max-width: 766px) {
+      .desc .links {
+        display: block; } }
+  .desc .third_pict {
+    display: none; }
+    @media (max-width: 766px) {
+      .desc .third_pict {
+        display: block;
+        width: 100%; } }
+  @media (max-width: 766px) {
+    .desc {
+      height: auto;
+      overflow: visible;
+      padding-top: 160px;
+      background-image: none;
+      padding-bottom: 330px;
+      padding: 0; }
+      .desc .container {
+        position: absolute;
+        top: 0;
+        padding-top: 160px;
+        height: 100%;
+        left: 0;
+        padding-top: 60vw; } }
+  .desc .mask {
+    display: none; }
+    @media (max-width: 1224px) {
+      .desc .mask {
+        background-color: rgba(0, 0, 0, 0.5);
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: block;
+        top: 0;
+        left: 0; } }
+    @media (max-width: 766px) {
+      .desc .mask {
+        display: none; } }
   .desc__list {
     font-size: .52vw;
     width: 110em;
@@ -309,14 +405,45 @@ html {
     @media (max-width: 1500px) {
       .desc__list {
         font-size: .57vw; } }
+    @media (max-width: 1224px) {
+      .desc__list {
+        float: none;
+        width: 100%;
+        padding-top: 5em; } }
     .desc__list.sublist {
       margin-top: 12em;
       width: 55em; }
+      @media (max-width: 1224px) {
+        .desc__list.sublist {
+          padding-top: 0;
+          width: 100%;
+          margin-top: 5em; } }
+      @media (max-width: 1024px) {
+        .desc__list.sublist {
+          margin-top: 1em; } }
+      @media (max-width: 766px) {
+        .desc__list.sublist {
+          margin-top: 45vw; } }
+      @media (max-width: 400px) {
+        .desc__list.sublist {
+          margin-top: 40px; } }
     .desc__list__item {
       font-size: 1.8em;
       margin-bottom: 2.5vh;
       font-weight: bold;
       position: relative; }
+      @media (max-width: 1024px) {
+        .desc__list__item {
+          font-size: 2.4em;
+          margin-bottom: 2vh; } }
+      @media (max-width: 766px) {
+        .desc__list__item {
+          font-size: 16px;
+          margin-bottom: 30px; } }
+      @media (max-width: 400px) {
+        .desc__list__item {
+          margin-bottom: 10px;
+          font-size: 14px; } }
       .desc__list__item:last-of-type {
         margin-bottom: 0; }
       .desc__list__item:before {
@@ -327,10 +454,21 @@ html {
         background-image: url("../img/arrow_right.png");
         left: -2.5em;
         top: .25em; }
+        @media (max-width: 766px) {
+          .desc__list__item:before {
+            left: -20px;
+            top: 12px; } }
       .desc__list__item em {
         font-size: 1.3em;
         font-style: normal;
         text-transform: uppercase; }
+        @media (max-width: 766px) {
+          .desc__list__item em {
+            font-size: 24px; } }
+        @media (max-width: 400px) {
+          .desc__list__item em {
+            font-size: 22px; } }
       .desc__list__item span {
         display: block;
-        font-size: .78em; }
+        font-size: .78em;
+        margin-top: 3px; }

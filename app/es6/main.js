@@ -12,6 +12,11 @@ window.onload = function(){
 		this.pause();
 		$(this).parent().removeClass('shown');
 	});
+
+	$('.main .arrow').click(function(){
+		$('.main__video video').get(0).pause();
+		$('.main__video').removeClass('shown');
+	});
 		
 	
 
@@ -27,13 +32,7 @@ window.onload = function(){
 		return false;
 	});
 	
-	// menu button
-	$('.main__menu_btn').click(function(){
-		$('.sandwich').toggleClass('active');
-		$('.nav_rolled').toggleClass('rolled');
-		$('.main__search').toggleClass('translated');
-	});
-
+function desktopScrolling(){
 	// remove scroll
 	function offScroll(){
 		var winScrollTop = $(window).scrollTop();
@@ -118,7 +117,16 @@ window.onload = function(){
 		}
 		scrollTo(k);
 	}
+}
+if($(window).width() > 768){
+	desktopScrolling();
+}
 
+$(window).resize(function(){
+	if($(window).width() > 768){
+		desktopScrolling();
+	}
+});
 	
 	var video = document.getElementsByClassName('video');
 	var btn1 = document.getElementsByClassName('btn1')[0];
@@ -144,45 +152,39 @@ window.onload = function(){
 		prevVideo.play();
 	}
 
-//video.addEventListener("progress", function() {
 
-
-	for(var k = 0; k < video.length; k++){
-		video[k].onloadeddata = function(){
-			for(var n = 0; n < video.length; n++){
-				var next = false;
-				if(video[n].classList.contains('active')){
-					var countPlay = 0;
-					video[n].play();
-					video[n].addEventListener('ended', function(){
-						console.log('ended');
-						countPlay++;
-						console.log(countPlay);
-						this.play();
-						if(countPlay >=3){
-							this.pause();
-							next = true;
-						}
-						if(next){
-							nextStep(this);
-						}
-					});
-					video[n].addEventListener('play', function(){
-						var that = this;
-						//console.log(that);
-						btn1.onclick = function(){
-							nextStep(that);
-						};
-						btn2.onclick = function(){
-							prevStep(that.nextElementSibling);
-						}
-					});
-				}
-			}
-		}
-	}
-//}, false);
-
-	var loop = true;
-//});
+	// for(var k = 0; k < video.length; k++){
+	// 	video[k].onloadeddata = function(){
+	// 		for(var n = 0; n < video.length; n++){
+	// 			var next = false;
+	// 			if(video[n].classList.contains('active')){
+	// 				var countPlay = 0;
+	// 				video[n].play();
+	// 				video[n].addEventListener('ended', function(){
+	// 					console.log('ended');
+	// 					countPlay++;
+	// 					console.log(countPlay);
+	// 					this.play();
+	// 					if(countPlay >=3){
+	// 						this.pause();
+	// 						next = true;
+	// 					}
+	// 					if(next){
+	// 						nextStep(this);
+	// 					}
+	// 				});
+	// 				video[n].addEventListener('play', function(){
+	// 					var that = this;
+	// 					//console.log(that);
+	// 					btn1.onclick = function(){
+	// 						nextStep(that);
+	// 					};
+	// 					btn2.onclick = function(){
+	// 						prevStep(that.nextElementSibling);
+	// 					}
+	// 				});
+	// 			}
+	// 		}
+	// 	}
+	// }
 }

@@ -40,6 +40,8 @@
 		animation-iteration-count: infinite
 		animation-direction: alternate-reverse
 		z-index: 2
+		min-width: 100px
+		min-height: 100px
 		.play_mask
 			position: absolute
 			width: 100%
@@ -60,11 +62,23 @@
 			margin: auto
 			width: 3em
 			height: 4.5em
+			@media #{$_sm}
+				min-width: 20px
+				min-height: 30px
+				left: 3em
 	&__title
 		font-size: 8em
 		padding-top: 2em
+		@media #{$_md}
+			padding-top: 3em
+			font-size: 10em
+		@media #{$_sm}
+			padding-top: 130px
+			font-size: 30px
 	&__subtitle
 		font-size: 4.4em
+		@media #{$_sm}
+			font-size: 16px
 // @keyframes pulse
 // 	0%
 // 		box-shadow: 0 0 32px rgba(255,255,255,.46)

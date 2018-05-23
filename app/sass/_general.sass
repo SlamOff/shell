@@ -1,7 +1,3 @@
-
-
-$blueText: #405069
-$blueBg: #1d2744
 $xs: "(min-width: 319px)"
 $_xs: "(max-width: 350px)"
 $sm: "(min-width: 767px)"
@@ -34,11 +30,14 @@ html
 		min-width: 320px
 		font: .52vw "Futura", sans-serif
 		font-weight: bold
-
 		position: relative
 		margin: 0 auto
 		color: #fff
 		overflow: hidden
+		@media #{$_lg}
+			font-size: .9vw
+		@media #{$_sm}
+			overflow: visible
 		input,input:focus,select,select:focus,textarea
 			outline: none
 		a
@@ -67,9 +66,18 @@ html
 				left: 0
 				right: 0
 				margin: auto
+				@media #{$_sm}
+					bottom: 30px
+					width: 30px
+					height: 20px
+					background-image: url('../img/arrow_down_m.png')
 			.arrow_up
 				background-image: url('../img/arrow_up.png')
+				@media #{$_sm}
+					background-image: url('../img/arrow_up_m.png')
 			&:before
+				min-width: 210px
+				min-height: 40px
 				content: ""
 				position: absolute
 				height: 7.5em
@@ -78,7 +86,12 @@ html
 				top: 4em
 				background-image: url('../img/logo.png')
 				background-size: 100% 100%
+				z-index: 1
+				@media #{$_sm}
+					top: 30px
 			&:after
+				min-width: 100px
+				min-height: 45px
 				content: ""
 				position: absolute
 				height: 8.9em
@@ -87,6 +100,9 @@ html
 				bottom: 4em
 				background-image: url('../img/logo_2.png')
 				background-size: 100% 100%
+				z-index: 1
+				@media #{$_sm}
+					bottom: 30px
 $cols: 12
 $col: calc( 100% / #{$cols} )
 =col($num)
